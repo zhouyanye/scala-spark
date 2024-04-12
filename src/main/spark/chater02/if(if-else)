@@ -1,0 +1,43 @@
+单分支 if 语句：
+单分支的 if 语句用于在满足特定条件时执行一组代码。
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    val x = 10
+
+    if (x > 5) {
+      println("x is greater than 5")
+    }
+  }
+}
+多分支 if-else 语句：
+多分支的 if-else 语句用于在不同的条件下执行不同的代码块。
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    val age = 18
+
+    if (age < 18) {
+      println("You are a minor.")
+    } else {
+      println("You are an adult.")
+    }
+  }
+}
+多条件的 if-else if-else 语句：
+如果有多个条件需要判断，可以使用 if-else if-else 结构。
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    val num = 0
+
+    if (num > 0) {
+      println("Positive")
+    } else if (num < 0) {
+      println("Negative")
+    } else {
+      println("Zero")
+    }
+  }
+}
+在 if 语句中，条件的结果应该是一个布尔表达式，如果条件为真，则执行相应的代码块。if-else 和 if-else if-else 结构允许你根据条件的不同来选择执行哪个代码块。

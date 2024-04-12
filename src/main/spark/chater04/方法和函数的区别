@@ -1,0 +1,48 @@
+在java中 方法和函数没有很大的区别 只是叫法不同 但是在scala中 函数和方法名就有区别了
+方法是属于类或者对象的  在运行时候它是加载到jvm的方法区中
+可以将函数对象复制给一个变量 在运行时候 它加载到jvm的堆内存中
+函数是一个对象 继承自Function 函数对象又apply curried toString tupled这些方法 方法则没有
+
+scala中 函数是对象 而方法是属于对象       方法归属于函数
+
+定义方法
+val getSum =(a:Int,b:Int) =>a+b
+getSum:(Int,Int) => Int= <function2>
+
+尝试将方法赋值给变量
+def add(a:Int,b:Int= a+b
+//val a=add(1,2)  这样写是在调用方法 而不是把方法赋值给变量
+val a=add //会报错
+//<console>:12: error: missing argument list for method add
+  Unapplied methods are only converted to functions when a function type is expected.
+  You can make this conversion explicit by writing `add _` or `add(_,_)` instead of `add`.
+         val a=add
+
+方法转换为函数
+
+val 变量名=方法名   //格式为: 方法名+空格+下划线   使用_即可讲方法转换为函数
+
+定义一个方法用来计算两个整数和
+将该方法转换为一个函数 并赋值给变量
+//定义一个方法用来计算两个整数和
+def add(a:Int,b:Int)= a+b
+//将该方法转换一个函数
+add:(Int,Int) => Int= <function2>
+val sum=a(10,20)
+println("sum="+sum)
+定义方式：
+
+方法（Method）： 方法通常定义在类或对象中，使用 def 关键字声明。它是类或对象的一部分。
+函数（Function）： 函数是一等公民，可以独立存在，也可以赋值给变量。函数可以在任何地方定义，不一定需要定义在类或对象中。
+调用方式：
+
+方法： 调用方法时，需要使用对象或类的实例，通过.调用。
+函数： 函数可以直接调用，不需要依赖于对象或类。
+参数传递：
+
+方法： 方法可以接收隐式的 this 参数，即调用它的对象或类的实例。
+函数： 函数是独立的，不依赖于特定的对象或类，因此没有隐式的 this 参数。
+返回值：
+
+方法： 方法可以有副作用（改变对象状态），并且可以没有明确的返回值（返回 Unit）。
+函数： 函数应该是纯粹的，不产生副作用，并总是有明确的返回值。

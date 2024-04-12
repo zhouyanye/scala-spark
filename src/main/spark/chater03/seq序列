@@ -1,0 +1,25 @@
+创建序列：可以使用不同的Seq子类型（例如List、Vector等）来创建序列。序列中的元素可以是任何数据类型。
+
+val list = List(1, 2, 3, 4, 5)
+val vector = Vector("a", "b", "c")
+访问元素：通过索引来访问序列中的元素。索引从0开始。
+val firstElement = list(0) // 获取序列的第一个元素（值为1）
+添加和更新元素：可以使用+运算符添加元素到序列末尾，或使用updated方法来更新指定位置的元素。
+
+val newList = list :+ 6 // 在序列末尾添加元素6，返回新序列
+val updatedList = list.updated(2, 10) // 将索引为2的元素更新为10，返回新序列
+遍历序列：您可以使用循环来遍历序列中的元素。
+
+for (element <- list) {
+  println(s"Element: $element")
+}
+检查元素是否存在：使用contains方法来检查序列中是否存在特定的元素。
+
+if (list.contains(3)) {
+  println("Element exists!")
+} else {
+  println("Element does not exist!")
+}
+获取子序列：使用slice方法获取序列的子序列，可以根据索引范围截取一部分元素。
+
+val subList = list.slice(1, 3) // 获取索引1到索引2的子序列，返回List(2, 3)

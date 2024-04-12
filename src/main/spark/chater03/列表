@@ -1,0 +1,12 @@
+列表是一种共享系统类型的不可变的对象序列 既然是一个不可变的集合 scala的List定义在scala.collection.immutable包中
+不同于Java的java.util.List scala的List一旦被定义 其值就不能改变 因此声明List必须初始化
+
+var strList = List("BigData", "Hadoop", "Spark") //一变量 strList 列表不可变
+println(strList)              // 打印整个列表
+println(strList.head)         // 打印第一个元素 "BigData"
+println(strList.tail)         // 打印除第一个元素外的所有元素 List("Hadoop", "Spark")
+println(strList(1))           // 打印索引为 1 的元素 "Hadoop"
+println(strList.contains("Spark"))  // 判断列表是否包含元素 "Spark"，返回 true
+
+val updatedList = strList :+ "Scala"   // 在列表末尾添加元素，返回新的列表
+println(updatedList)

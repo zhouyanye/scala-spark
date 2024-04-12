@@ -1,0 +1,25 @@
+while 循环：
+while 循环会在指定条件为真时不断执行循环体内的代码块。
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    var count = 0
+
+    while (count < 5) {
+      println(s"Count is $count")
+      count += 1
+    }
+  }
+}
+do-while 循环：
+do-while 循环会先执行一次循环体内的代码块，然后在指定条件为真时继续执行循环。
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    var num = 5
+    do {
+      println(s"Number is $num")
+      num -= 1
+    } while (num > 0)
+  }
+}

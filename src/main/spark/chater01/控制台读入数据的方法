@@ -1,0 +1,60 @@
+需要导入scala.io.StdIn
+
+readBoolean
+
+readByte
+
+readChar
+
+readDouble
+
+readFloat
+
+readLong
+
+readShort
+
+
+import scala.io.StdIn._
+
+object Main {
+ def main(args: Array[String]): Unit = {
+
+    // 读取一个整数
+    print("请输入一个整数：")
+    val intInput = readInt()
+    println(s"你输入的整数是：$intInput")
+
+    // 读取一个布尔值
+    print("请输入 true 或 false：")
+    val booleanInput = readBoolean()
+    println(s"你输入的布尔值是：$booleanInput")
+
+    // 读取一个字符
+    print("请输入一个字符：")
+    val charInput = readChar()
+    println(s"你输入的字符是：$charInput")
+
+    // 读取一个双精度浮点数
+    print("请输入一个双精度浮点数：")
+    val doubleInput = readDouble()
+    println(s"你输入的双精度浮点数是：$doubleInput")
+
+    // 读取一个单精度浮点数
+    print("请输入一个单精度浮点数：")
+    val floatInput = readFloat()
+    println(s"你输入的单精度浮点数是：$floatInput")
+
+    // 读取一个长整型数
+    print("请输入一个长整型数：")
+    val longInput = readLong()
+    println(s"你输入的长整型数是：$longInput")
+
+    // 读取一个短整型数
+    print("请输入一个短整型数：")
+    val shortInput = readShort()
+    println(s"你输入的短整型数是：$shortInput")
+  }
+}
+
+

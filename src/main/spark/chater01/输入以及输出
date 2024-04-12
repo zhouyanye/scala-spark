@@ -1,0 +1,30 @@
+输入：
+
+Scala 使用 scala.io.StdIn 模块提供了简便的方法来读取标准输入。以下是几种常用的输入方法：
+读取整数：scala.io.StdIn.readInt()
+读取布尔值：scala.io.StdIn.readBoolean()
+读取字符：scala.io.StdIn.readChar()
+读取双精度浮点数：scala.io.StdIn.readDouble()
+读取单精度浮点数：scala.io.StdIn.readFloat()
+读取长整型数：scala.io.StdIn.readLong()
+读取短整型数：scala.io.StdIn.readShort()
+
+
+输出：
+
+Scala 使用 println、print 和 printf 函数来输出内容。
+println 打印内容并换行。
+print 打印内容但不换行。
+printf 允许格式化输出。
+object Main {
+  def main(args: Array[String]): Unit = {
+    val name = "Alice"
+    val age = 25
+    val height = 1.75
+
+    printf("My name is %s, I am %d years old, and my height is %.2f meters.\n", name, age, height)
+  }
+}
+在这个示例中，%s 是一个字符串占位符，%d 是一个整数占位符，%.2f 是一个浮点数占位符，.2 表示保留两位小数。后面的参数按照顺序填充到占位符中，结果会输出类似于：
+
+My name is Alice, I am 25 years old, and my height is 1.75 meters.

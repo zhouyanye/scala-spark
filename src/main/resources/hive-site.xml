@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+
+    <!-- 设置Hive临时目录 -->
+    <property>
+        <name>hive.exec.scratchdir</name>
+        <value>/tmp/tmp</value>
+    </property>
+
+    <!-- JDBC连接配置 -->
+    <property>
+        <name>javax.jdo.option.ConnectionURL</name>
+        <value>jdbc:mysql://master:3306/hive?createDatabaseIfNotExist=true&amp;useSSL=false&amp;characterEncoding=UTF-8</value>
+    </property>
+    <property>
+        <name>javax.jdo.option.ConnectionDriverName</name>
+        <value>com.mysql.jdbc.Driver</value>
+    </property>
+    <property>
+        <name>javax.jdo.option.ConnectionUserName</name>
+        <value>root</value>
+    </property>
+    <property>
+        <name>javax.jdo.option.ConnectionPassword</name>
+        <value>MyPassword20040620!</value>
+    </property>
+
+    <!-- Hive元数据存储配置 -->
+    <property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>hdfs://master:8020/opt/module/hive-3.1.2/warehouse</value>
+    </property>
+
+    <!-- 配置Beeline远程客户端连接 -->
+    <property>
+        <name>hive.server2.thrift.client.user</name>
+        <value>root</value>
+        <description>用于Thrift客户端的用户名。默认为'anonymous'</description>
+    </property>
+    <property>
+        <name>hive.server2.thrift.client.password</name>
+        <value>MyPassword20040620!</value>
+        <description>用于Thrift客户端的密码。默认为'anonymous'</description>
+    </property>
+
+    <!-- 配置HiveServer2连接的主机和端口 -->
+    <property>
+        <name>hive.server2.thrift.bind.host</name>
+        <value>master</value>
+    </property>
+    <property>
+        <name>hive.server2.thrift.port</name>
+        <value>10000</value>
+    </property>
+
+    <!-- 配置远程模式部署metastore服务地址 -->
+    <property>
+        <name>hive.metastore.uris</name>
+        <value>thrift://master:9083</value>
+    </property>
+
+    <!-- 启用HiveServer2的主动/被动高可用性 -->
+    <property>
+        <name>hive.server2.active.passive.ha.enable</name>
+        <value>true</value>
+        <description>启用HiveServer2的主动/被动高可用性，需要同时启用hive.server2.support.dynamic.service.discovery。</description>
+    </property>
+
+    <!-- 关闭HiveServer2操作日志记录 -->
+    <property>
+        <name>hive.server2.logging.operation.enabled</name>
+        <value>false</value>
+    </property>
+
+    <!-- 关闭数据存储版本验证 -->
+    <property>
+        <name>datanucleus.metadata.validate</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>datanucleus.schema.autoCreateAll</name>
+        <value>false</value>
+    </property>
+
+    <!-- 配置事务支持 -->
+    <property>
+        <name>hive.support.concurrency</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.txn.manager</name>
+        <value>org.apache.hadoop.hive.ql.lockmgr.DbTxnManager</value>
+    </property>
+    <property>
+        <name>hive.compactor.initiator.on</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.compactor.worker.threads</name>
+        <value>2</value>
+    </property>
+
+    <!-- 开启本地模式 -->
+    <property>
+        <name>hive.exec.mode.local.auto</name>
+        <value>true</value>
+    </property>
+
+    <!-- 开启查询执行计划和性能日志输出 -->
+    <property>
+        <name>hive.log.explain.output</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.log.perf.output</name>
+        <value>true</value>
+    </property>
+
+    <!-- 配置Tez引擎容器大小 -->
+    <property>
+        <name>hive.tez.container.size</name>
+        <value>1024</value>
+    </property>
+
+    <!-- 启用Hive矢量化执行 -->
+    <property>
+        <name>hive.vectorized.execution.enabled</name>
+        <value>true</value>
+    </property>
+
+    <!-- 配置Hive连接池大小 -->
+    <property>
+        <name>hive.server2.thrift.max.worker.threads</name>
+        <value>100</value>
+    </property>
+
+    <!-- 配置动态分区剪枝 -->
+    <property>
+        <name>hive.optimize.dynamic.partition.pruning</name>
+        <value>true</value>
+    </property>
+
+    <!-- 配置HiveServer2内存 -->
+    <property>
+        <name>hive.server2.thrift.heap.size</name>
+        <value>1024</value>
+    </property>
+
+    <!-- 配置查询并行度 -->
+    <property>
+        <name>hive.exec.parallel</name>
+        <value>true</value>
+    </property>
+
+    <!-- 配置HiveServer2日志级别 -->
+    <property>
+        <name>hive.server2.logging.operation.enabled</name>
+        <value>false</value> <!-- 设置为true以启用日志 -->
+    </property>
+
+    <!-- 配置元数据存储授权和版本验证 -->
+    <property>
+        <name>hive.metastore.event.db.notification.api.auth</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+    </property>
+
+    <!-- 配置Hive并发支持 -->
+    <property>
+        <name>hive.support.concurrency</name>
+        <value>true</value>
+    </property>
+
+    <!-- 配置动态分区功能 -->
+    <property>
+        <name>hive.exec.dynamic.partition</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.exec.dynamic.partition.mode</name>
+        <value>nonstrict</value>
+    </property>
+
+    <!-- 事务管理相关配置 -->
+    <property>
+        <name>hive.txn.manager</name>
+        <value>org.apache.hadoop.hive.ql.lockmgr.DbTxnManager</value>
+    </property>
+    <!-- 是否在Metastore实例上运行启动线程和清理线程 -->
+    <property>
+        <name>hive.compactor.initiator.on</name>
+        <value>true</value>
+    </property>
+    <!-- 在此metastore实例上运行多少个压缩程序工作线程。 -->
+    <property>
+        <name>hive.compactor.worker.threads</name>
+        <value>1</value>
+    </property>
+
+    <!-- 配置标识符 -->
+    <!-- 带反引号的名称被解释为正则表达式 -->
+    <property>
+        <name>hive.support.quoted.identifiers</name>
+        <value>none</value>
+    </property>
+
+    <!-- 启用优化配置 -->
+    <property>
+        <name>hive.optimize.bucketmapjoin</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.auto.convert.sortmerge.join</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.optimize.bucketmapjoin.sortedmerge</name>
+        <value>true</value>
+    </property>
+
+    <!-- 配置Hive CLI提示符 -->
+    <property>
+        <name>hive.cli.prompt</name>
+        <value>superHive</value>
+    </property>
+
+    <!-- 调优配置 -->
+    <!-- 设置Map端的Java虚拟机初始堆大小 -->
+    <property>
+        <name>mapreduce.map.java.opts</name>
+        <value>-Xms512m</value>
+    </property>
+    <!-- 设置Map端的Java虚拟机最大堆大小 -->
+    <property>
+        <name>mapreduce.map.java.opts.max.heap</name>
+        <value>-Xmx1024m</value>
+    </property>
+    <!-- 设置Reduce端的Java虚拟机初始堆大小 -->
+    <property>
+        <name>mapreduce.reduce.java.opts</name>
+        <value>-Xms1024m</value>
+    </property>
+    <!-- 设置Reduce端的Java虚拟机最大堆大小 -->
+    <property>
+        <name>mapreduce.reduce.java.opts.max.heap</name>
+        <value>-Xmx2048m</value>
+    </property>
+    <!-- 设置Tez任务的Java虚拟机初始堆大小 -->
+    <property>
+        <name>tez.task.launch.cmd-opts</name>
+        <value>-Xms512m</value>
+    </property>
+    <!-- 设置Tez任务的Java虚拟机最大堆大小 -->
+    <property>
+        <name>tez.task.launch.cmd-opts.max.heap</name>
+        <value>-Xmx1024m</value>
+    </property>
+
+    <property>
+        <name>mapreduce.jobtracker.address</name>
+        <value>ignorethis</value>
+    </property>
+    <property>
+        <name>hive.exec.show.job.failure.debug.info</name>
+        <value>true</value>
+    </property>
+    <!-- yarn作业获取到的hiveserver2用户都为hive用户。设置成true则为实际的用户名 -->
+    <property>
+        <name>hive.server2.enable.doAs</name>
+        <value>false</value>
+    </property>
+
+    <!-- 校验在metastore中存储的信息的版本和hive的jar包中的版本一致性-->
+    <property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+    </property>
+
+</configuration>

@@ -1,0 +1,27 @@
+创建映射：
+val map = Map("key1" -> "value1", "key2" -> "value2")
+访问值：通过键来访问映射中的值。
+val value = map("key1") // 获取键"key1"对应的值"value1"
+添加和更新元素：可以通过指定键和值来添加元素，或者通过已有的键来更新元素。
+val newMap = map + ("key3" -> "value3") // 添加新的键值对
+val updatedMap = map + ("key1" -> "new_value1") // 更新已有的键值对
+遍历映射：您可以使用循环来遍历映射中的键值对，或仅遍历键或值。
+for ((key, value) <- map) {
+  println(s"Key: $key, Value: $value")
+}
+
+for (key <- map.keys) {
+  println(s"Key: $key")
+}
+
+for (value <- map.values) {
+  println(s"Value: $value")
+}
+检查键是否存在：使用contains方法来检查映射中是否存在特定的键。
+if (map.contains("key1")) {
+  println("Key exists!")
+} else {
+  println("Key does not exist!")
+}
+删除元素：可以通过键来删除映射中的元素。
+val newMapWithoutKey2 = map - "key2" // 删除键"key2"对应的键值对

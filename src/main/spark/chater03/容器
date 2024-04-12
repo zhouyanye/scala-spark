@@ -1,0 +1,10 @@
+scala提供了一套丰富的容器(Collection)包含列表List 数组Array 集合Set 映射  Map
+容器元素的组织方式和操作方式 可以区分为有序和无序 可变和不可变等不同的容器类别
+scala使用了三个包组织容器类 分别是scala.collection、scala.collection.mutable和scala.collection.immutable
+
+####
+scala.collection：这个包包含了 Scala 集合框架的核心类和接口。它提供了一系列的通用集合类型，包括列表（List）、数组（Array）、集合（Set）、映射（Map）等。这些集合类型可以是可变的（mutable）或者不可变的（immutable），可以是有序的（ordered）或者无序的（unordered）。
+
+scala.collection.mutable：这个包包含了可变集合类。可变集合允许在运行时修改它们的元素，比如添加、删除或更新元素。在这个包中，可以找到可变列表（Mutable List）、可变数组（Array Buffer）、可变集合（Mutable Set）、可变映射（Mutable Map）等
+
+scala.collection.immutable 包包含了不可变集合类，这些集合在创建后不可更改。它们对于函数式编程和并发编程非常有用，因为它们天生具备线程安全性和不变性。在这个包中，你可以找到各种不可变集合类，例如不可变列表（List）、不可变数组（Array）、不可变集合（Set）、不可变映射（Map）等。这些集合类提供了丰富的方法和功能，可以进行查找、遍历和操作。

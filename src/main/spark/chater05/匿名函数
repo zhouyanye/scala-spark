@@ -1,0 +1,48 @@
+匿名函数是没有名字的函数，通常使用 `=>` 符号来定义。在Scala中，匿名函数的语法如下：
+
+```scala
+(parameters) => expression
+```
+
+以下是一些匿名函数的例子：
+
+1. **简单的加法匿名函数：**
+
+```scala
+val add: (Int, Int) => Int = (x, y) => x + y
+```
+
+这个匿名函数接受两个整数参数 `x` 和 `y`，并返回它们的和。
+
+2. **判断奇偶性的匿名函数：**
+
+```scala
+val isEven: Int => Boolean = (num) => num % 2 == 0
+```
+
+这个匿名函数接受一个整数参数 `num`，并返回一个布尔值，表示该数字是否为偶数。
+
+3. **匿名函数作为高阶函数的参数：**
+
+```scala
+val square: Int => Int = (x) => x * x
+
+val applyAndPrint: (Int => Int) => Unit = (f) => {
+  val result = f(5)
+  println(s"Result: $result")
+}
+```
+
+在这个例子中，`square` 是一个用于计算平方的匿名函数。`applyAndPrint` 是一个接受一个函数作为参数的匿名函数，它将传入的函数应用于数字 `5`，并打印结果。
+
+4. **匿名函数用于集合操作：**
+
+```scala
+val numbers = List(1, 2, 3, 4, 5)
+
+val squaredNumbers = numbers.map((x) => x * x)
+```
+
+在这个例子中，`map` 函数接受一个匿名函数，将其应用于列表中的每个元素，返回新的列表，包含每个元素的平方。
+
+匿名函数通常在需要短暂使用一小段逻辑的场景中使用，而不需要为其命名。

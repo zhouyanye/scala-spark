@@ -1,0 +1,23 @@
+集合  是不重复元素的容器 列表元素是按照插入的先后顺序来组织的 但是集合中的元素并不会记录元素的插入顺序 而是以 哈希 方法对元素的值进行组长 所以 它允许你快速地找到某个元素
+
+在Scala中，集合分为可变集合（mutable）和不可变集合（immutable）。可变集合允许在创建后修改其内容，而不可变集合则不允许修改。这种区分是为了提供不同的语义和性能特性，以满足不同的编程需求。
+
+在Scala中，不可变集合位于`scala.collection.immutable`包下，而可变集合位于`scala.collection.mutable`包下。
+
+首先，看一个不可变集合的例子：
+val mySet = Set("Hadoop", "Spark")
+mySet += "Scala"
+
+上述代码中，`mySet`是一个不可变集合。虽然使用了`+=`操作符，看起来好像在修改集合，但实际上它并没有修改原始的`mySet`集合。而是创建了一个新的集合，该集合包含原始集合的元素以及新添加的元素。所以，实际上，该代码等同于以下操作：
+
+val mySet = Set("Hadoop", "Spark")
+val newSet = mySet + "Scala"
+这样，原始集合`mySet`保持不变，而`newSet`则是一个包含三个元素（"Hadoop"、"Spark"和"Scala"）的新集合。
+
+现在，让我们来看一个可变集合的例子：
+import scala.collection.mutable.Set
+val mutableSet = Set("Database", "BigData")
+mutableSet += "Cloud Computing"
+上述代码中，使用了可变集合。首先，通过`import scala.collection.mutable.Set`导入了可变集合的包。然后，我们创建了一个可变集合`mutableSet`，并使用`+=`操作符向其中添加了一个新的元素"Cloud Computing"。与不可变集合不同的是，这次操作会直接修改原始的`mutableSet`集合，而不是创建一个新的集合。
+因此，经过上述操作后，`mutableSet`集合现在包含了四个元素（"Database"、"BigData"、"Cloud Computing"）。
+总结一下，可变集合和不可变集合的区别在于是否允许修改原始集合。在可变集合中，可以直接修改集合内容，而在不可变集合中，任何修改操作都会创建一个新的集合。
